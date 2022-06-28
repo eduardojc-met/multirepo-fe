@@ -32,7 +32,7 @@ export const Login = (props: RouteComponentProps<any>) => {
       <Container maxWidth="xl">
         <Grid container py={4} spacing={2} justifyContent="flex-end">
           <Grid item>
-            <SCFLogin onSubmit={handleLogin} loginError={loginError} />
+            <SCFLogin onSubmit={handleLogin}  />
           </Grid>
         </Grid>
       </Container>
