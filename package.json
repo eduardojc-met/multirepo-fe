@@ -80,7 +80,7 @@
     "@mui/styles": "5.6.1",
     "@popperjs/core": "^2.11.2",
     "@reduxjs/toolkit": "1.6.2",
-    "@scfhq/foundation-uax": "https://nexus.scf-centendashboardpro01-391a523e0203d3683790f242c9079785-0000.eu-gb.containers.appdomain.cloud/repository/npm-hosted-releases/",
+    "@scfhq/foundation-uax": "1.2.6",
     "axios": "0.21.4",
     "bootstrap": "4.6.0",
     "dayjs": "1.10.7",
