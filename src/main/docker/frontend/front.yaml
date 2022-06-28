@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: ClusterIP
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: front
+  name: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: front
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.service.type: LoadBalancer
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: front
+    spec:
+      imagePullSecrets:
+        - name: ibm-registry-apikey
+      containers:
+        - image: de.icr.io/devops-tools/frontend
+          name: front
+          ports:
+            - containerPort: 9000
+          readinessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /index.html
+              port: 9000
+            initialDelaySeconds: 60
+            periodSeconds: 5
+          resources: {}
+          livenessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /index.html
+              port: 9000
+            initialDelaySeconds: 60
+            periodSeconds: 5
+      restartPolicy: Always
+
+status: {}
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: ClusterIP
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: front-tcp
+  name: front-tcp
+spec:
+  ports:
+    - name: "9000"
+      port: 9000
+      targetPort: 9000
+  selector:
+    io.kompose.service: front
+  type: ClusterIP
+status:
+  loadBalancer: {}

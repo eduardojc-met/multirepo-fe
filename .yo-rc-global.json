@@ -1,0 +1,7 @@
+{
+  "@scfhq/generator-jhipster-foundation:2.4.0": {
+    "promptValues": {
+      "nativeLanguage": "es"
+    }
+  }
+}

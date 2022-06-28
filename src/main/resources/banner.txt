@@ -1,0 +1,16 @@
+${AnsiColor.RED}               :
+${AnsiColor.RED}              Kk.
+${AnsiColor.RED}              KMK.
+${AnsiColor.RED}           '  ;WMX.                   .....
+${AnsiColor.RED}          cW;  ,XMN:               c0NMMMMMNk                                xNX.                                           KWO
+${AnsiColor.RED}          :MMd  .0MM;             0MWl'...';'                                OMN.                                          .NMO
+${AnsiColor.RED}     .;l;  xMMx  .0MKo:.         .WMX             ;ok0000Ox;   oxk0000kd;    OMWkxxx;   ;dk0K00Ox,  .oxO0000ko,      ;dk0000WMO    'ok000kl.   .dkO0KKO
+${AnsiColor.RED}  .o0WMMX.  dMMO. 'WMMMMXx,       :NMXd;.       ;NMNdc::oWMk  .WMK:::ckWM0   OMWxooo' :NMXdc::dMMd  ;MM0:::cxWM0   ;NMXdc::oWMO  .kMNd:;cOMMl  ,MM0:;;;
+${AnsiColor.RED} :NMMMMMMX'  :WMX.,MMMMMMMMk        :kXMMXk;   .NMX.    .WMk  .WMk     dMM;  OMN.    ,MM0     ,MMd  ;MMo     xMM' .NMK.    .NMO  xMW,     0MW. ,MMd
+${AnsiColor.RED} WMMMMMMMMW;  ;WMKXMMMMMMMMMc          .:xNMX' ;MMo     .WMk  .WMk     lMM;  OMN.    lMMc     ,MMd  ;MMo     dMM, :MMl     .NMO  KMMWWWWWWWMM' ,MMd
+${AnsiColor.RED} xMMMMMMMMMW:  xMMMMMMMMMMMX.             :MMx 'MMk     .WMk  .WMk     lMM;  OMN.    :MMo     ,MMd  ;MMo     dMM, ,MMx     .NMO  kMWc.         ,MMd
+${AnsiColor.RED}  :KMMMMMMMMMx OMMMMMMMMMNx.      lc,....;OMMc  xMMx'...lWMk  .WMk     lMM;  dMMo.... 0MWo'...dMMd  ;MMo     dMM,  kMMd....cWMO  .KMXl'     ,  ,MMd
+${AnsiColor.RED}     .cx0NMMMMMKMMMMMWKkl'        .0XWMMMMWKd'    :ONMMW0l0Xd  .KXd     cXX,   oKWMMN;  :ONMMW0oXXo  ,XXl     oXX'   cONMMW0c0Xx    :OXWMMMNK:  'XXo
+${AnsiColor.RED}          ,cdOO00Oxl;.               .,;;'.          ''.                         .''       .'.                          ''.            .''.
+
+${AnsiColor.BRIGHT_BLUE}:: SCF Code Generator 🤓  :: Running Spring Boot ${spring-boot.version} ::

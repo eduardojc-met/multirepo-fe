@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: nodeport
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: backend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: backend
+    spec:
+      imagePullSecrets:
+        - name: ibm-registry-apikey
+      containers:
+        - env:
+            - name: PATH_LOG_FILE
+              value: /tmp
+          image: de.icr.io/devops-tools/backend
+          name: backend
+          ports:
+            - containerPort: 8080
+          resources: {}
+          livenessProbe:
+            httpGet:
+              path: /management/health/liveness
+              port: 8082
+              scheme: HTTPS
+            initialDelaySeconds: 120
+            timeoutSeconds: 30
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /management/health/readiness
+              port: 8082
+              scheme: HTTPS
+            initialDelaySeconds: 120
+            timeoutSeconds: 30
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 3
+      restartPolicy: Always
+status: {}
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: nodeport
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  ports:
+    - name: "8443"
+      port: 8443
+      targetPort: 8443
+  selector:
+    io.kompose.service: backend
+  type: NodePort
+status:
+  loadBalancer: {}
+
